@@ -10,13 +10,14 @@ footer{
     font-size: 1.25rem;
     margin-left: 10px;
     display: inline-block;
+    font-family:"pixelify sans";
 }
 .text{
     color: white;
     text-align: center;
     margin: 60px;
 }
-.container{
+.cont2{
     height: 50vh;
     margin: auto;
     display: grid;
@@ -28,6 +29,11 @@ footer{
 h1{
     font-family:"pixelify sans";
     font-weight: 100;
+}
+
+h2{    
+   font-family:"pixelify sans";
+   font-weight: 100;
 }
 .red{
     color: red;
@@ -74,4 +80,39 @@ h1{
 .gameover{
     background-color: red;
     opacity: 0.8;
+}
+.btn{
+    font-size: large;
+    padding: 5px;
+    color: white;
+    font-family:"pixelify sans" ;
+    background-color:goldenrod;
+    border-radius: 15%;
+    margin-bottom: 20px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+@media(max-width:768px){
+    h1{
+        visibility: hidden;
+        font-size: 0px;
+    }
+}
+
+@media(min-width:768px){
+    .smalldisplay{
+        visibility: hidden;
+        font-size: 0px;
+    }
+    .btn{
+        visibility: hidden;
+    }
+}
+
+.visibility{
+    visibility: hidden;
 }
