@@ -37,6 +37,7 @@ function nextSequencebtn(){
 $(document).keypress(function() {
     if (!started) {
       $("h1").text("Level " + level);
+      $("h2").text("Level " + level);
       nextSequence();
       started = true;
     }
