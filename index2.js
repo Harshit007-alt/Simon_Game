@@ -9,6 +9,7 @@ var started=false;
 
 var currentlevel=0;
 
+// to start the game by clicking the start button 
 $(".btn").click(function() {
     if (!started) {
       $("h1").text("Level " + level);
@@ -18,7 +19,7 @@ $(".btn").click(function() {
     }
   });
 
-  function nextSequencebtn(){
+function nextSequencebtn(){
     userClickedColour=[];
     ++level;
     $("h2").text("Level " + level);
@@ -31,14 +32,16 @@ $(".btn").click(function() {
     buttonanimation(randomchosencolor)
 }
 
+// to start the game by pressing any key on keyboard
+
 $(document).keypress(function() {
     if (!started) {
       $("h1").text("Level " + level);
-      $("h2").text("Level " + level);
       nextSequence();
       started = true;
     }
   });
+
 function nextSequence(){
     userClickedColour=[];
     ++level;
