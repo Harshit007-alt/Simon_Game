@@ -13,24 +13,24 @@ var currentlevel=0;
 $(".btn").click(function() {
     if (!started) {
       $("h1").text("Level " + level);
-      nextSequencebtn();
+      nextSequence();
       started = true;
       $(".btn").addClass("visibility");
     }
   });
 
-function nextSequencebtn(){
-    userClickedColour=[];
-    ++level;
-    $("h2").text("Level " + level);
-    var randomvariable=Math.floor(Math.random()*4);
+// function nextSequencebtn(){
+//     userClickedColour=[];
+//     ++level;
+//     $("h2").text("Level " + level);
+//     var randomvariable=Math.floor(Math.random()*4);
 
-    var randomchosencolor=buttonColours[randomvariable];
-    gamePattern.push(randomchosencolor);
+//     var randomchosencolor=buttonColours[randomvariable];
+//     gamePattern.push(randomchosencolor);
 
-    audio(randomchosencolor);
-    buttonanimation(randomchosencolor)
-}
+//     audio(randomchosencolor);
+//     buttonanimation(randomchosencolor)
+// }
 
 // to start the game by pressing any key on keyboard
 
