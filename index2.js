@@ -7,7 +7,7 @@ var userClickedColour=[];
 var level=0;
 var started=false;
 
-var currentlevel=0;
+var currentlevel=0; //created to check the usre input with game pattern on the go
 
 // to start the game by clicking the start button 
 $(".btn").click(function() {
@@ -19,19 +19,6 @@ $(".btn").click(function() {
     }
   });
 
-// function nextSequencebtn(){
-//     userClickedColour=[];
-//     ++level;
-//     $("h2").text("Level " + level);
-//     var randomvariable=Math.floor(Math.random()*4);
-
-//     var randomchosencolor=buttonColours[randomvariable];
-//     gamePattern.push(randomchosencolor);
-
-//     audio(randomchosencolor);
-//     buttonanimation(randomchosencolor)
-// }
-
 // to start the game by pressing any key on keyboard
 
 $(document).keypress(function() {
@@ -42,6 +29,8 @@ $(document).keypress(function() {
       started = true;
     }
   });
+
+// function to create next sequence of the game if user input the correct sequence 
 
 function nextSequence(){
     userClickedColour=[];
@@ -57,11 +46,14 @@ function nextSequence(){
     buttonanimation(randomchosencolor)
 }
 
+// function to add volume to button of simmon games 
 
 function audio(name){
     var key=new Audio("sound/"+name+".mp3");
     key.play();
 }
+
+// function to add animation whenever we click simon game button 
 
 function buttonanimation(currentkey){
     var button=document.querySelector("."+currentkey);
@@ -72,16 +64,17 @@ function buttonanimation(currentkey){
     }
 }
 
+// adding a click function to buttons 
+
 $(".bttn").click(function(){
     var userChosenColour=this.id;
     userClickedColour.push(userChosenColour);
-
     audio(userChosenColour);
     buttonanimation(userChosenColour);
-
     check();
 })
 
+// function to check if the user chosen colour match game pattern and to call next sequence
 
 function check(){
     if (userClickedColour[currentlevel]===gamePattern[currentlevel]){
@@ -98,6 +91,8 @@ function check(){
     }
 }
 
+// function to start over if user input wrong colour 
+
 function startover(){
     $("h1").text("Game Over, Press Any key To Restart ");
     $("h2").text("Game Over, Press Start To Restart ");
@@ -109,6 +104,8 @@ function startover(){
     gameoversound.play();
     gameoveranimation();
 }
+
+// game over animation
 
 function gameoveranimation(){
     document.querySelector("html").classList.add("gameover");
